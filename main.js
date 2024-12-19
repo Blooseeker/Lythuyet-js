@@ -342,10 +342,79 @@
 
 // 16. If else trong jS
 //  Xuất thông báo cho người dùng
-let dtb = Number(prompt("Mời cụ nhập điểm:"));
-// kiểm tra điều kiện
-if (dtb >= 5.0) {
-  console.log("Bạn đã đỗ");
+// let dtb = Number(prompt("Mời cụ nhập điểm:"));
+// // kiểm tra điều kiện
+// if (dtb >= 5.0) {
+//   console.log("Bạn đã đỗ");
+// } else {
+//   console.log("Bạn đã oẳng");
+// }
+
+//  bài if- else if
+/* Nhập vào điểm TB in ra xếp loại học sinh
+     Giỏi: dtb <= 10 và >=8
+     Khá : 8 >dtb>=6.5
+     TB: 6.5>dtb>=5
+     Yếu: 0<dtb<5
+ */
+
+// let dtb = Number(prompt("Mời cụ nhập điểm:"));
+
+// // Kiểm tra điều kiện
+// if (dtb <= 10 && dtb >= 8) {
+//   console.log("Học sinh giỏi");
+// } else if (dtb < 8 && dtb >= 6.5) {
+//   console.log("Học sinh khá");
+// } else if (dtb < 6.5 && dtb >= 5) {
+//   console.log("Học sinh TB");
+// } else if (dtb < 5 && dtb >= 0) {
+//   console.log("Học sinh yếu");
+// } else {
+//   console.log("Nhập điểm tào lao");
+// }
+
+// Bài tập về if else if
+// Bài 07 tìm x y
+// Nhập liệu từ bàn phím
+// let tong = Number(prompt("Nhập tổng:"));
+// let hieu = Number(prompt("Nhập hiệu:"));
+
+// // tính giá trị của x
+// let x = (tong + hieu) / 2;
+
+// // tính giá trị của y
+// let y = x - hieu;
+
+// // xuất kết quả ra màn hình
+
+// console.log(`Kết quả x là ${x}`);
+// console.log(`Kết quả y là ${y}`);
+
+// Bài 08: Viết chương trình nhập vào chiều cao, cân nặng tính BMI
+// Nhập dữ liệu từ bàn phím
+let chieuCao = Number(prompt("Nhập chiều cao (m):"));
+let canNang = Number(prompt("Nhập cân nặng (kg):"));
+
+// Tính toán giá trị BMI
+// let BMI = canNang / (chieuCao * chieuCao);
+// let BMI = canNang / chieuCao ** 2;
+let BMI = canNang / Math.pow(chieuCao, 2);
+console.log(`Chỉ số BMI của bạn là : ${BMI.toFixed(2)}`);
+// điều kiện xuất ra màn hình
+if (BMI < 15) {
+  console.log("Thân hình quá gầy");
+} else if (BMI >= 15 && BMI < 16) {
+  console.log("Thân hình gầy");
+} else if (BMI >= 16 && BMI < 18.5) {
+  console.log("Thân hình hơi gầy");
+} else if (BMI >= 18.5 && BMI < 25) {
+  console.log("Thân hình bình thường");
+} else if (BMI >= 25 && BMI < 30) {
+  console.log("Thân hình hơi béo");
+} else if (BMI >= 30 && BMI < 35) {
+  console.log("Thân hình béo");
+} else if (BMI >= 35) {
+  console.log("Thân hình quá béo");
 } else {
-  console.log("Bạn đã oẳng");
+  console.log("Nhập cân nặng or chiều cao linh tinh");
 }
