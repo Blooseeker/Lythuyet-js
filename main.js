@@ -289,39 +289,63 @@
 
 // 13. Hàm toán học cơ bản
 //    1. Hàm "Math.sqrt()"
-let a = Math.sqrt(9);
-console.log(a);
+// let a = Math.sqrt(9);
+// console.log(a);
 
-//   2. Hàm lũy thừa Math.pow(base, exponent)
-let b = Math.pow(2, 3);
-console.log(b);
+// //   2. Hàm lũy thừa Math.pow(base, exponent)
+// let b = Math.pow(2, 3);
+// console.log(b);
 
-//   3. Hàm Math.abs() giá trị tuyệt đối cảu -10 là 10
-let c = Math.abs(-10);
-console.log(c);
+// //   3. Hàm Math.abs() giá trị tuyệt đối cảu -10 là 10
+// let c = Math.abs(-10);
+// console.log(c);
 
-//   4. Hàm Math.ceil() và Math.floor() làm tròn lên xuống.
-let d = Math.ceil(5.004);
-console.log(d);
+// //   4. Hàm Math.ceil() và Math.floor() làm tròn lên xuống.
+// let d = Math.ceil(5.004);
+// console.log(d);
 
-//   5. Hàm Math.round() từ 0.5 làm tròn lên
-let e = Math.round(4.49);
-console.log(e);
+// //   5. Hàm Math.round() từ 0.5 làm tròn lên
+// let e = Math.round(4.49);
+// console.log(e);
 
-//   6. Hàm làm tròn X chữ số sau dấu phẩy
-let f = 3.14586;
-let fRounded = Number(f.toFixed(2)); // vì vậy nên phải ép thành kiểu số number
-console.log(fRounded);
-console.log(typeof fRounded); // Lại thành kiểu string "chuỗi" nếu ko ép kiểu number bên trên
+// //   6. Hàm làm tròn X chữ số sau dấu phẩy
+// let f = 3.14586;
+// let fRounded = Number(f.toFixed(2)); // vì vậy nên phải ép thành kiểu số number
+// console.log(fRounded);
+// console.log(typeof fRounded); // Lại thành kiểu string "chuỗi" nếu ko ép kiểu number bên trên
 
-// Hàm Math.min()   và Math.max()  tìm giá trị lớn nhỏ
-let num1 = 8,
-  num2 = 12,
-  num3 = 5;
-let minValue = Math.min(num1, num2, num3);
-let maxValue = Math.max(num1, num2, num3);
-console.log(`Giá trị nhỏ nhất là: ${minValue}`);
-console.log(`Giá trị lớn nhất là: ${maxValue}`);
-// ví dụ
-let h = Math.max(1, 2, 45, 78, 100);
-console.log(h);
+// // Hàm Math.min()   và Math.max()  tìm giá trị lớn nhỏ
+// let num1 = 8,
+//   num2 = 12,
+//   num3 = 5;
+// let minValue = Math.min(num1, num2, num3);
+// let maxValue = Math.max(num1, num2, num3);
+// console.log(`Giá trị nhỏ nhất là: ${minValue}`);
+// console.log(`Giá trị lớn nhất là: ${maxValue}`);
+// // ví dụ
+// let h = Math.max(1, 2, 45, 78, 100);
+// console.log(h);
+
+// // 15. Hàm Math.random()
+// //   1. Random từ 0-1
+// let randomValue = Math.random();
+// console.log(`Số ngẫu nhiên từ 0 đến sát 1 là: ${randomValue} `);
+
+// //   2. Random số lơn hơn 1
+// let randomValue2 = Math.random() * 10;
+// console.log(`Số ngẫu nhiên từ 0 đến sát 10 là: ${randomValue2} `);
+
+// //   3. Random số nguyên
+
+// let randomValue3 = parseInt(Math.random() * 10);
+// console.log(`Số ngẫu nhiên từ 0 đến sát 10 là: ${randomValue3} `);
+
+// 16. If else trong jS
+//  Xuất thông báo cho người dùng
+let dtb = Number(prompt("Mời cụ nhập điểm:"));
+// kiểm tra điều kiện
+if (dtb >= 5.0) {
+  console.log("Bạn đã đỗ");
+} else {
+  console.log("Bạn đã oẳng");
+}
