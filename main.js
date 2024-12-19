@@ -245,14 +245,83 @@
 
 //  Bài tập 6 Nhạp điểm 3 môn Toán, Văn, Anh.
 
-let toan = Number(prompt("Nhập điểm Toán: ")); // nếu không ép kiểu dữ liệu number thì phép tính + sẽ sai
-let van = Number(prompt("Nhập điểm Văn: "));
-let anh = Number(prompt("Nhập điểm Tiếng Anh: "));
-dtb = (toan + van + anh) / 3;
-console.log(toan);
-console.log(van);
-console.log(anh);
-console.log(dtb);
-console.log("Điểm trung bình 3 môn:", dtb.toFixed(2)); // Cách 1
-console.log(`Điểm trung bình 3 môn: ${dtb.toFixed(2)} `); // Cách 2
-console.log(`Điểm trung bình 3 môn: %s `, dtb.toFixed(2)); // Cách 3
+// let toan = Number(prompt("Nhập điểm Toán: ")); // nếu không ép kiểu dữ liệu number thì phép tính + sẽ sai
+// let van = Number(prompt("Nhập điểm Văn: "));
+// let anh = Number(prompt("Nhập điểm Tiếng Anh: "));
+// dtb = (toan + van + anh) / 3;
+// console.log(toan);
+// console.log(van);
+// console.log(anh);
+// console.log(dtb);
+// console.log("Điểm trung bình 3 môn:", dtb.toFixed(2)); // Cách 1
+// console.log(`Điểm trung bình 3 môn: ${dtb.toFixed(2)} `); // Cách 2
+// console.log(`Điểm trung bình 3 môn: %s `, dtb.toFixed(2)); // Cách 3
+
+// 12. Các phép so sánh
+// let a = 3;
+// let b = 3;
+// let c = "3";
+
+// console.log(typeof b);
+// console.log(typeof c);
+// // các phép so sánh thông thường giống toán học
+// console.log(a > b);
+// console.log(a < b);
+// console.log(a <= b);
+// console.log(a >= b);
+// console.log(a != b);
+// console.log(c != b); // lưu ý
+
+// // so sánh bằng == ( không quan tâm đến kiểu biến )
+// console.log(a == b);
+// console.log(c == b);
+
+// // so sánh tuyệt đối (===) so sánh giá trị và kiểu giữ liệu.
+// console.log(a === b);
+// console.log(c === b);
+
+// console.log("phần 2");
+// console.log(a != b);
+// console.log(c != b); // lưu ý ( không quan tâm đến kiểu biến )
+
+// console.log(a !== b);
+// console.log(c !== b); // so sánh tuyệt đối (!==) so sánh giá trị và kiểu giữ liệu.
+
+// 13. Hàm toán học cơ bản
+//    1. Hàm "Math.sqrt()"
+let a = Math.sqrt(9);
+console.log(a);
+
+//   2. Hàm lũy thừa Math.pow(base, exponent)
+let b = Math.pow(2, 3);
+console.log(b);
+
+//   3. Hàm Math.abs() giá trị tuyệt đối cảu -10 là 10
+let c = Math.abs(-10);
+console.log(c);
+
+//   4. Hàm Math.ceil() và Math.floor() làm tròn lên xuống.
+let d = Math.ceil(5.004);
+console.log(d);
+
+//   5. Hàm Math.round() từ 0.5 làm tròn lên
+let e = Math.round(4.49);
+console.log(e);
+
+//   6. Hàm làm tròn X chữ số sau dấu phẩy
+let f = 3.14586;
+let fRounded = Number(f.toFixed(2)); // vì vậy nên phải ép thành kiểu số number
+console.log(fRounded);
+console.log(typeof fRounded); // Lại thành kiểu string "chuỗi" nếu ko ép kiểu number bên trên
+
+// Hàm Math.min()   và Math.max()  tìm giá trị lớn nhỏ
+let num1 = 8,
+  num2 = 12,
+  num3 = 5;
+let minValue = Math.min(num1, num2, num3);
+let maxValue = Math.max(num1, num2, num3);
+console.log(`Giá trị nhỏ nhất là: ${minValue}`);
+console.log(`Giá trị lớn nhất là: ${maxValue}`);
+// ví dụ
+let h = Math.max(1, 2, 45, 78, 100);
+console.log(h);
