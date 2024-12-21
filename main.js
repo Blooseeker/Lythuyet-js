@@ -392,29 +392,146 @@
 
 // Bài 08: Viết chương trình nhập vào chiều cao, cân nặng tính BMI
 // Nhập dữ liệu từ bàn phím
-let chieuCao = Number(prompt("Nhập chiều cao (m):"));
-let canNang = Number(prompt("Nhập cân nặng (kg):"));
+// let chieuCao = Number(prompt("Nhập chiều cao (m):"));
+// let canNang = Number(prompt("Nhập cân nặng (kg):"));
 
-// Tính toán giá trị BMI
-// let BMI = canNang / (chieuCao * chieuCao);
-// let BMI = canNang / chieuCao ** 2;
-let BMI = canNang / Math.pow(chieuCao, 2);
-console.log(`Chỉ số BMI của bạn là : ${BMI.toFixed(2)}`);
-// điều kiện xuất ra màn hình
-if (BMI < 15) {
-  console.log("Thân hình quá gầy");
-} else if (BMI >= 15 && BMI < 16) {
-  console.log("Thân hình gầy");
-} else if (BMI >= 16 && BMI < 18.5) {
-  console.log("Thân hình hơi gầy");
-} else if (BMI >= 18.5 && BMI < 25) {
-  console.log("Thân hình bình thường");
-} else if (BMI >= 25 && BMI < 30) {
-  console.log("Thân hình hơi béo");
-} else if (BMI >= 30 && BMI < 35) {
-  console.log("Thân hình béo");
-} else if (BMI >= 35) {
-  console.log("Thân hình quá béo");
-} else {
-  console.log("Nhập cân nặng or chiều cao linh tinh");
+// // Tính toán giá trị BMI
+// // let BMI = canNang / (chieuCao * chieuCao);
+// // let BMI = canNang / chieuCao ** 2;
+// let BMI = canNang / Math.pow(chieuCao, 2);
+// console.log(`Chỉ số BMI của bạn là : ${BMI.toFixed(2)}`);
+// // điều kiện xuất ra màn hình
+// if (BMI < 15) {
+//   console.log("Thân hình quá gầy");
+// } else if (BMI >= 15 && BMI < 16) {
+//   console.log("Thân hình gầy");
+// } else if (BMI >= 16 && BMI < 18.5) {
+//   console.log("Thân hình hơi gầy");
+// } else if (BMI >= 18.5 && BMI < 25) {
+//   console.log("Thân hình bình thường");
+// } else if (BMI >= 25 && BMI < 30) {
+//   console.log("Thân hình hơi béo");
+// } else if (BMI >= 30 && BMI < 35) {
+//   console.log("Thân hình béo");
+// } else if (BMI >= 35) {
+//   console.log("Thân hình quá béo");
+// } else {
+//   console.log("Nhập cân nặng or chiều cao linh tinh");
+// }
+
+// Bài 09: Viết chương trình nhập vào năm dương lịch.
+/* kiểm tra xem có phải năm nhuận hay ko */
+// nhập năm từ bàn phím
+// let nam = Number(prompt("Mời cụ nhập năm:"));
+// console.log("Bạn nhập năm:" + nam);
+// // kiểm tra xem nhuận hay ko nhuận
+// if (nam % 4 === 0 && nam % 100 !== 0) {
+//   console.log(nam, "Năm nhuận");
+// } else if (nam % 400 === 0) {
+//   console.log(nam, "Năm nhuận");
+// } else {
+//   console.log(nam, "Năm không nhuận");
+// }
+
+// Bài 10. Kiểm tra xem tháng đấy có bao nhiêu ngày
+// Nhập số liệu năm và tháng
+
+// let thang = parseInt(prompt("Mời cụ nhập tháng:"));
+// // kiểm tra tính hợp lệ của tháng
+
+// if (!isNaN(thang) && thang >= 1 && thang <= 12) {
+//   // kiểm tra xem tháng có bao nhiêu ngày.
+//   if (
+//     thang === 1 ||
+//     thang === 3 ||
+//     thang === 5 ||
+//     thang === 7 ||
+//     thang === 8 ||
+//     thang === 10 ||
+//     thang === 12
+//   ) {
+//     console.log(`Tháng ${thang} có 31 ngày `);
+//   } else if (thang === 4 || thang === 6 || thang === 9 || thang === 11) {
+//     console.log(`Tháng ${thang} có 30 ngày `);
+//   } else if (thang === 2) {
+//     let nam = Number(prompt("Mời cụ nhập năm:"));
+
+//     if ((nam % 4 === 0 && nam % 100 !== 0) || nam % 400 === 0) {
+//       console.log(`${nam} là năm nhuận Tháng ${thang} có 29 ngày `);
+//     } else {
+//       console.log(`${nam} là năm ko nhuận Tháng ${thang} có 28 ngày `);
+//     }
+//   }
+// } else {
+//   console.log("Tháng không hợp lệ vui lòng nhập lại");
+// }
+
+//  17. Toán tử 3 ngôi
+// let number = 10;
+// let mes = number >= 0 ? "số dương" : "số âm";
+// console.log(mes);
+
+// //  Kiểm tra chẵn lẻ của 1 số
+// let number1 = 9;
+// let soKiemtra = number1 % 2 === 0 ? " số chẵn " : " số lẻ ";
+// console.log(soKiemtra);
+
+// Bài 13: Viết chương trình nhập vào điểm trung bình xuất ra kết quả.
+// nhập điểm trung bình
+// let dtb = parseFloat(prompt("Mời cụ nhập điểm:"));
+// // xét điểm theo toán tử 3 ngôi
+// let diemTb =
+//   dtb >= 8 ? "Giỏi" : dtb >= 6.5 ? "Khá" : dtb >= 5 ? "Trung Bình" : "Yếu";
+// console.log("Bạn xếp hạng: ", diemTb);
+
+// 18. Truthy anh Falsy values
+// let a = 123;
+// console.log(typeof a);
+// let b = String(a);
+// console.log(typeof b);
+// console.log("Giá trị cảu b là:", b);
+
+// 19. Switch case cơ bản và ví dụ minh họa.
+// let number = "abc";
+// switch (number % 2) {
+//   case 0:
+//     console.log("Số chẵn");
+//     break;
+//   case 1:
+//     console.log("Số lẻ");
+//     break;
+//   default:
+//     console.log("Không phải số");
+// }
+
+// //  cách xuất chuổi xuống dòng
+// console.log("Sông cầu nước chảy lơ thơ\nCó đôi trai gái ngồi hơ quần đùi");
+// console.log(`Sông cầu nước chảy lơ thơ
+// Có đôi trai gái ngồi hơ quần đùi`);
+
+// Bài tập 14. Viết xuất ra màn hình thông báo
+let choice = Number(
+  prompt(`
+1. Tìm theo tên
+2. Tìm theo tác giả
+3. Tìm theo nhà xuất bản
+4. Tìm theo tiêu đề
+Thoát nếu ko hợp lệ`)
+);
+switch (choice) {
+  case 1:
+    alert("Tìm theo tên");
+    break;
+  case 2:
+    alert("Tìm theo tác giả");
+    break;
+  case 3:
+    alert("Tìm theo nhà xuất bản");
+    break;
+  case 4:
+    alert("Tìm theo tiêu đề");
+    break;
+  default:
+    alert("Lựa chọn ko hợp lệ");
+    break;
 }
