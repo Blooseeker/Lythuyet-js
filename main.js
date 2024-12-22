@@ -510,28 +510,100 @@
 // Có đôi trai gái ngồi hơ quần đùi`);
 
 // Bài tập 14. Viết xuất ra màn hình thông báo
-let choice = Number(
-  prompt(`
-1. Tìm theo tên
-2. Tìm theo tác giả
-3. Tìm theo nhà xuất bản
-4. Tìm theo tiêu đề
-Thoát nếu ko hợp lệ`)
-);
-switch (choice) {
-  case 1:
-    alert("Tìm theo tên");
-    break;
-  case 2:
-    alert("Tìm theo tác giả");
-    break;
-  case 3:
-    alert("Tìm theo nhà xuất bản");
-    break;
-  case 4:
-    alert("Tìm theo tiêu đề");
-    break;
-  default:
-    alert("Lựa chọn ko hợp lệ");
-    break;
+// let choice = Number(
+//   prompt(`
+// 1. Tìm theo tên
+// 2. Tìm theo tác giả
+// 3. Tìm theo nhà xuất bản
+// 4. Tìm theo tiêu đề
+// Thoát nếu ko hợp lệ`)
+// );
+// switch (choice) {
+//   case 1:
+//     alert("Tìm theo tên");
+//     break;
+//   case 2:
+//     alert("Tìm theo tác giả");
+//     break;
+//   case 3:
+//     alert("Tìm theo nhà xuất bản");
+//     break;
+//   case 4:
+//     alert("Tìm theo tiêu đề");
+//     break;
+//   default:
+//     alert("Lựa chọn ko hợp lệ");
+//     break;
+// }
+
+// 20. Vòng lặp while trong JavaScript
+// let i = 1;
+// while (i <= 5) {
+//   console.log(i);
+//   i++; // i = i + 1
+// }
+
+// ví dụ viết ct nhập số n từ bàn phím là số nguyên sai nhập lại
+// let n = prompt("Mời cụ nhập số nguyên n (từ 1 đến 99):");
+// console.log(n);
+// while (isNaN(n) || n < 1 || n > 99 || n % 1 !== 0) {
+//   n = Number(prompt("Số bạn nhập không hợp lệ mời nhập lại:"));
+// }
+// alert("Bạn đã nhập số: " + n);
+
+// 21.Vòng lặp Do while
+// let i = 1;
+// do {
+//   console.log(i);
+//   i++;
+// } while (i <= 5);
+
+// 22. while ( true )
+//  Tăng n cho đến khi n=10
+// let n = 0;
+// while (true) {
+//   n++;
+//   alert(n);
+//   if (n === 10) {
+//     break;
+//   }
+// }
+
+// 23. Vòng lặp For
+// for (let i = 0; i < 5; i++) {
+//   console.log(i);
+// }
+
+// 24.1 Continue và Break để kiểm soát vòng lặp
+// for (let i = 1; i <= 10; i++) {
+//   if (i % 2 !== 0) {
+//     continue; // dùng continue là bỏ qua ko hiện thị nếu lệnh trong if đúng trường hợp này là bỏ qua số lẻ
+//   } else {
+//     console.log(i);
+//   }
+// }
+
+//  Bài tập 15 JS
+//  Nhập liệu số nguyên n
+let n = Number(prompt("Mời cụ nhập số nguyên 0 âm n:"));
+// kiểm tra tính hợp lệ của n
+while (n < 0 || !Number.isInteger(n)) {
+  n = Number(prompt("Số bạn nhập ko phải là số nguyên mời nhập lại:"));
 }
+console.log(n);
+// Dùng vòng lặp for
+// let gt = 1;
+// for (let i = 1; i <= n; i++) {
+//   gt *= i; // gt = gt * i
+// }
+// console.log(n + "! =" + gt);
+
+// Dùng vòng lặp while
+let gt = 1;
+let i = 1;
+while (i <= n) {
+  gt *= i;
+  console.log(i);
+  i++;
+}
+console.log(n + "! =" + gt);
