@@ -585,25 +585,194 @@
 
 //  Bài tập 15 JS
 //  Nhập liệu số nguyên n
-let n = Number(prompt("Mời cụ nhập số nguyên 0 âm n:"));
-// kiểm tra tính hợp lệ của n
-while (n < 0 || !Number.isInteger(n)) {
-  n = Number(prompt("Số bạn nhập ko phải là số nguyên mời nhập lại:"));
-}
-console.log(n);
-// Dùng vòng lặp for
+// let n = Number(prompt("Mời cụ nhập số nguyên 0 âm n:"));
+// // kiểm tra tính hợp lệ của n
+// while (n < 0 || !Number.isInteger(n)) {
+//   n = Number(prompt("Số bạn nhập ko phải là số nguyên mời nhập lại:"));
+// }
+// console.log(n);
+// // Dùng vòng lặp for
+// // let gt = 1;
+// // for (let i = 1; i <= n; i++) {
+// //   gt *= i; // gt = gt * i
+// // }
+// // console.log(n + "! =" + gt);
+
+// // Dùng vòng lặp while
 // let gt = 1;
-// for (let i = 1; i <= n; i++) {
-//   gt *= i; // gt = gt * i
+// let i = 1;
+// while (i <= n) {
+//   gt *= i;
+//   console.log(i);
+//   i++;
 // }
 // console.log(n + "! =" + gt);
 
-// Dùng vòng lặp while
-let gt = 1;
-let i = 1;
-while (i <= n) {
-  gt *= i;
-  console.log(i);
-  i++;
+// Bài tập 16: Tính tổng số chẵn nếu lẻ thoát chương trình
+// let a = Number(prompt("Mời cụ nhập số chẵn a:"));
+// while (!Number.isInteger(a)) {
+//   a = Number(prompt("Số bạn nhập không đúng mời nhập lại:"));
+// }
+// console.log(a);
+
+// // dùng while
+// if (a % 2 === 0) {
+//   let tong = 0;
+//   let i = 0;
+//   while (i <= a) {
+//     tong += i; // tong = tong + i
+//     console.log(i);
+//     i += 2;
+//   }
+//   console.log("Tổng các số chẵn từ 0 tới " + a + " là: " + tong);
+//   alert(`Tổng các số chẵn từ 0 đến ${a} là: ${tong}`);
+// } else {
+//   // nếu a lẻ
+//   alert("Tôi ko tính tổng lẻ, bye bye");
+// }
+
+// dùng if for
+// let a = Number(prompt("Mời cụ nhập số chẵn a:"));
+// while (!Number.isInteger(a)) {
+//   a = Number(prompt("Số bạn nhập không đúng mời nhập lại:"));
+// }
+// console.log(a);
+// if (a % 2 === 0) {
+//   let tong = 0;
+//   for (let i = 0; i <= a; i += 2) {
+//     tong += i;
+//   }
+//   console.log("Tổng các số chẵn từ 0 tới " + a + " là: " + tong); // hiện thị ở của sổ console trong mục kiểm tra
+//   alert(`Tổng các số chẵn từ 0 đến ${a} là: ${tong}`); // hiện thị lên màn hình
+// } else {
+//   // nếu a lẻ
+//   alert("Tôi ko tính tổng lẻ, bye bye");
+// }
+
+// Bài tập 17 Tính tổng các số lẻ từ 1 đến n ko cộng với số 3
+
+// let n = Number(prompt("Mời nhập số nguyên lẻ n:"));
+// // kiểm tra n có phải sô nguyên
+// while (!Number.isInteger(n)) {
+//   n = Number(prompt("Số bạn nhập chưa đúng mời mời nhập lại:"));
+// }
+// console.log(n);
+// if (n % 2 !== 0) {
+//   tongLe = 0;
+//   for (let i = 1; i <= n; i += 2) {
+//     console.log(i);
+//     if (i === 3) {
+//       // câu lệnh bỏ qua giá trị 3
+//       continue;
+//     }
+//     tongLe += i;
+//   }
+//   console.log(`Tổng các số lẻ từ 1 đến ${n} là: ${tongLe}`);
+//   alert(`Tổng các số lẻ từ 1 đến ${n} là: ${tongLe}`);
+// } else {
+//   alert("Tôi ko tính tổng chẵn, bye bye");
+// }
+
+//  Bài tập 18: Tìm số chia hết cho 3 từ 10 đến 50
+
+// for (let i = 10; i <= 50; i++) {
+//   if (i % 3 === 0) {
+//     console.log(i);
+//   }
+// }
+// // Nâng cao đếm xem có bao nhiêu giá trị chia hết cho 3 ở trên
+// let dem = 0;
+// for (let i = 10; i <= 50; i++) {
+//   if (i % 3 === 0) {
+//     dem++;
+//   }
+// }
+// console.log(`Có tổng cộng ${dem} số chia hết cho 3`);
+
+//  Bài tập 19: Tính tổng các giai thừa
+
+// let n = 5;
+// let gt = 1;
+// for (let i = 1; i <= n; i++) {
+//   gt *= i;
+// }
+// console.log(`${n}! = ${gt}`);
+
+// let sum = 0;
+// for (let n = 0; n <= 10; n++) {
+//   let gt = 1;
+//   for (let i = 1; i <= n; i++) {
+//     gt *= i;
+//   }
+//   console.log(`${n}! = ${gt}`);
+//   sum += gt;
+// }
+// console.log(`Tổng giai thừa S = ${sum}`);
+
+// Bài tập 20: Tìm số hoàn hảo từ 1-1000
+//  kiêm tra xem 1 số có phải số hoàn hảo không
+/*
+tong = 0;
+let n = 6;
+for (let i = 1; i < n; i++) {
+  if (n % i === 0) {
+    console.log(i);
+    tong += i;
+  }
 }
-console.log(n + "! =" + gt);
+console.log(tong);
+// kiểm tra số hoàn hảo
+if (tong === n) {
+  console.log(`Số ${n} là số hoàn hảo`);
+} else {
+  console.log(`Số ${n} ko phải số hoàn hảo`);
+}
+*/
+
+// for (let n = 1; n < 1000; n++) {
+//   tong = 0;
+//   // kiểm tra xem tổng ước thực = bao nhiêu
+//   for (let i = 1; i < n; i++) {
+//     if (n % i === 0) {
+//       tong += i;
+//     }
+//   }
+//   //  so sánh tổng ước thực có = n hay ko
+//   if (tong === n) {
+//     console.log(`Số ${n} là số hoàn hảo`);
+//   }
+// }
+
+// Bài tập 21: Kiểm tra số nguyên tố
+// Nhập số nguyên tố
+while (true) {
+  let a = Number(prompt("Mời cụ nhập số NT a:"));
+  // kiểm tra xem có phải số nguyên lớn hơn 1 ko đúng nhập lại
+  while (!Number.isInteger(a) || a <= 0) {
+    a = Number(prompt("Mời cụ nhập lại số NT a:"));
+  }
+  // alert(`Số ${a} là số hợp lệ`);
+  // Kiểm tra xem số a có phải số nguyên tố hay ko
+  let soNguyento = true;
+  for (let i = 2; i < a; i++) {
+    if (a % i === 0) {
+      soNguyento = false;
+      break;
+    }
+  }
+
+  // Hiện thị kết quả
+  if (soNguyento === true) {
+    alert(`${a} là số nguyên tố`);
+  } else {
+    alert(`${a} ko là số nguyên tố`);
+  }
+  // hỏi người dùng có muốn tiếp tục hay ko
+  let answer = prompt(`
+  Bạn có muốn tiếp tục không
+  Nhập "0" để thoát
+  Nhập phím bất kỳ để tiếp tục`);
+  if (answer === "0") {
+    break;
+  }
+}
