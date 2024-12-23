@@ -744,35 +744,150 @@ if (tong === n) {
 // }
 
 // Bài tập 21: Kiểm tra số nguyên tố
-// Nhập số nguyên tố
-while (true) {
-  let a = Number(prompt("Mời cụ nhập số NT a:"));
-  // kiểm tra xem có phải số nguyên lớn hơn 1 ko đúng nhập lại
-  while (!Number.isInteger(a) || a <= 0) {
-    a = Number(prompt("Mời cụ nhập lại số NT a:"));
-  }
-  // alert(`Số ${a} là số hợp lệ`);
-  // Kiểm tra xem số a có phải số nguyên tố hay ko
-  let soNguyento = true;
-  for (let i = 2; i < a; i++) {
-    if (a % i === 0) {
-      soNguyento = false;
-      break;
-    }
-  }
+//   b1 Nhập số nguyên tố
+// while (true) {
+//   let a = Number(prompt("Mời cụ nhập số NT a:"));
+//   // b2 kiểm tra xem có phải số nguyên lớn hơn 1 ko đúng nhập lại
+//   while (!Number.isInteger(a) || a <= 0) {
+//     a = Number(prompt("Mời cụ nhập lại số NT a:"));
+//   }
+//   // alert(`Số ${a} là số hợp lệ`);
+//   // b3 Kiểm tra xem số a có phải số nguyên tố hay ko
+//   let soNguyento = true;
+//   for (let i = 2; i < a; i++) {
+//     if (a % i === 0) {
+//       soNguyento = false;
+//       break;
+//     }
+//   }
 
-  // Hiện thị kết quả
-  if (soNguyento === true) {
-    alert(`${a} là số nguyên tố`);
-  } else {
-    alert(`${a} ko là số nguyên tố`);
-  }
-  // hỏi người dùng có muốn tiếp tục hay ko
-  let answer = prompt(`
-  Bạn có muốn tiếp tục không
-  Nhập "0" để thoát
-  Nhập phím bất kỳ để tiếp tục`);
-  if (answer === "0") {
-    break;
-  }
+//   // b4 Hiện thị kết quả
+//   if (soNguyento === true) {
+//     alert(`${a} là số nguyên tố`);
+//   } else {
+//     alert(`${a} ko là số nguyên tố`);
+//   }
+//   // b5 hỏi người dùng có muốn tiếp tục hay ko
+//   let answer = prompt(`
+//   Bạn có muốn tiếp tục không
+//   Nhập "0" để thoát
+//   Nhập phím bất kỳ để tiếp tục`);
+//   if (answer === "0") {
+//     break;
+//   }
+// }
+
+// 25.1 Function là gì JS
+// 1. Cấu trúc hàm function
+// Bước 1: khai báo hàm
+// function tenFunction() {
+//   // mã lệnh được thực hiện 1 nhiệm vụ nào đó
+// }
+// // Bước 2: Gọi hàm - khi cần sử dụng
+// tenFunction();
+// // 2. Ví dụ đơn giản
+// // Khai báo
+// function xinChao() {
+//   console.log("Chào mừng đến với thế giới này");
+// }
+// // Gọi hàm ra để dùng
+// xinChao();
+
+// // Function với tham số
+// // let inputName = prompt("Mời bạn nhập tên:");
+// function xinchao1(tenthamso) {
+//   console.log(`Chào mừng ${tenthamso} đến với thế giới này.`);
+// }
+// // Gọi hàm
+// // xinchao1(inputName);
+// xinchao1("Trần Như Nhộng");
+
+// // 3. Ví dụ 2 tính tổng hai số
+// function tinhTong(a, b) {
+//   // let ketQua = a + b;
+//   // return ketQua;
+//   return a + b; // cách viết gọn hai dòng lệnh bên trên
+// }
+// // gọi hàm
+// console.log(tinhTong(5, 7));
+// // gán biến cho hàm (lưu giá trị trả về vào biến)
+// let diemToan = 9;
+// let diemVan = 8.5;
+// let tongDiem = tinhTong(diemToan, diemVan);
+// console.log("Tổng điểm là:" + tongDiem);
+// console.log("DTB:" + tongDiem / 2);
+// // 4. Truyền giá trị mặc định cho parameters
+// console.log(tinhTong(10)); // truyền có 1 đối số a còn b ko truyền nên khi cộng tổng a và b bị lỗi NaN
+// // truyền 1 giá trị mặc định cho a và b trước
+// function tinhTong2(a = 0, b = 0) {
+//   return a + b;
+// }
+// console.log(tinhTong2(10)); // vẫn truyền 1 tham số a nhưng b đã có mặc định bằng 0 nên tổng bằng 10
+
+// 25.2 Các cách khai báo hàm function
+// 1. Khai báo tường minh Function declaration
+// 2. Khai báo expression
+// cấu trúc hàm
+// let ten_bien = function (doiso) {};
+// thân hàm
+// return something
+// ví dụ Khai báo
+// let tich = function (a = 1, b = 1) {
+//   return a * b;
+// };
+// // Gọi hàm
+// console.log(tich(3, 5));
+// 3. Khai báo Arrow fucntion 9 (hàm mũi tên)
+// cú pháp khai báo ngắn gọn hơn trong JS
+// ví dụ
+// khai báo của cách 2 expression
+// let multiply = function (a, b) {
+//   return a * b;
+// };
+// console.log(multiply(3, 4)); // Gọi hàm
+
+// // Khai báo kiểu arrow
+// let multiplyArrow = (a, b) => a * b;
+// console.log(multiplyArrow(4, 4)); // Gọi hàm
+
+// //  Tuy nhiên với trường hợp phức tạp, cần thêm khối {}
+// // Cách 1 Expression
+// let andAdd = function (a, b) {
+//   let and = a + b;
+//   let add = a * b;
+//   return and + add;
+// };
+// console.log(andAdd(4, 5));
+
+// //  Cách 2 Arrow
+// let andaddArrow = (a, b) => {
+//   let and = a + b;
+//   let add = a * b;
+//   return and + add;
+// };
+// console.log(andaddArrow(4, 5));
+
+// 25.4 Gọi hàm trong hàm khác function calling other function
+//  Hàm thực hiện phép cộng
+function cong(a, b) {
+  return a + b;
 }
+
+//  Hàm thực hiện nhân
+function nhan(x, y) {
+  return x * y;
+}
+
+// Goị hàm trong hàm khác để thực hiện cộng và nhân trong hàm đó
+function congNhan(so1, so2, so3) {
+  // gọi hàm cộng để tính tổng so1 + so2
+  let sum = cong(so1, so2);
+  // gọi hàm nhân để tính tích sum * so3
+  let product = nhan(sum, so3);
+  // trả về kết quả
+  return product;
+}
+
+//  sử dụng hàm congNhan
+let ketqua = congNhan(2, 3, 4);
+console.log(ketqua);
