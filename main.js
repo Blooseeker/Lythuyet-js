@@ -869,25 +869,401 @@ if (tong === n) {
 
 // 25.4 Gọi hàm trong hàm khác function calling other function
 //  Hàm thực hiện phép cộng
-function cong(a, b) {
-  return a + b;
-}
+// function cong(a, b) {
+//   return a + b;
+// }
 
-//  Hàm thực hiện nhân
-function nhan(x, y) {
-  return x * y;
-}
+// //  Hàm thực hiện nhân
+// function nhan(x, y) {
+//   return x * y;
+// }
 
-// Goị hàm trong hàm khác để thực hiện cộng và nhân trong hàm đó
-function congNhan(so1, so2, so3) {
-  // gọi hàm cộng để tính tổng so1 + so2
-  let sum = cong(so1, so2);
-  // gọi hàm nhân để tính tích sum * so3
-  let product = nhan(sum, so3);
-  // trả về kết quả
-  return product;
-}
+// // Goị hàm trong hàm khác để thực hiện cộng và nhân trong hàm đó
+// function congNhan(so1, so2, so3) {
+//   // gọi hàm cộng để tính tổng so1 + so2
+//   let sum = cong(so1, so2);
+//   // gọi hàm nhân để tính tích sum * so3
+//   let product = nhan(sum, so3);
+//   // trả về kết quả
+//   return product;
+// }
 
-//  sử dụng hàm congNhan
-let ketqua = congNhan(2, 3, 4);
-console.log(ketqua);
+// //  sử dụng hàm congNhan
+// let ketqua = congNhan(2, 3, 4);
+// console.log(ketqua);
+
+// Bài tập 22: Tính n! bằng cách sử dụng function
+// let n = Number(prompt("Nhập vào số nguyên 0 âm:"));
+// // kiểm tra tính hợp lệ của số nguyên, sai nhập lại
+// while (!Number.isInteger(n) || n < 0) {
+//   n = Number(prompt("Nhập sai mời cụ nhập lại:"));
+// }
+// //  sử dụng function tính giai thừa dùng for
+// function tinhGtfor(n) {
+//   let gt = 1;
+//   for (let i = 1; i <= n; i++) {
+//     gt *= i;
+//   }
+//   return gt;
+// }
+
+// //  dùng While
+// function tinhGtwhile(n) {
+//   let gt = 1;
+//   let i = 1;
+//   while (i <= n) {
+//     gt *= i;
+//     i++;
+//   }
+//   return gt;
+// }
+// let ketquaGt = tinhGtfor(n);
+// console.log(`${n}! dùng For = ${ketquaGt}`);
+// let ketquaGtwhile = tinhGtwhile(n);
+// console.log(`${n}! dùng while = ${ketquaGtwhile}`);
+
+//  Bài tập 23: Giải hệ phương trình bậc 2 bằng function
+// Cách 1 Sử dụng Function Declaration (khai báo hàm tường minh)
+// function ptb2_1(a, b, c) {
+//   // tính Delta
+//   let delta = b ** 2 - 4 * a * c;
+//   if (delta > 0) {
+//     let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+//     let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+//     console.log(`PT có 2 nghiệm x1 = ${x1} x2 = ${x2}`);
+//   } else if (delta === 0) {
+//     let x1 = -b / (2 * a);
+//     console.log(`PT có nghiệm kép x1 = x2 = ${x1}`);
+//   } else {
+//     console.log("Phương trình vô nghiệm");
+//   }
+// }
+// // gọi hàm
+// ptb2_1(1, 2, -3);
+// ptb2_1(1, 2, 1);
+// ptb2_1(1, 1, 1);
+
+// // Cách 2 sủ dụng Function Expression
+// let ptb2_2 = function (a, b, c) {
+//   // tính Delta
+//   let delta = b ** 2 - 4 * a * c;
+//   if (delta > 0) {
+//     let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+//     let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+//     console.log(`PT có 2 nghiệm x1 = ${x1} x2 = ${x2}`);
+//   } else if (delta === 0) {
+//     let x1 = -b / (2 * a);
+//     console.log(`PT có nghiệm kép x1 = x2 = ${x1}`);
+//   } else {
+//     console.log("Phương trình vô nghiệm");
+//   }
+// };
+// // gọi hàm
+// ptb2_2(1, 2, -3);
+// ptb2_2(1, 2, 1);
+// ptb2_2(1, 1, 1);
+
+// // Cách 3 sủ dụng Function Arrow
+
+// let ptb2_3 = (a, b, c) => {
+//   // tính Delta
+//   let delta = b ** 2 - 4 * a * c;
+//   if (delta > 0) {
+//     let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+//     let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+//     console.log(`PT có 2 nghiệm x1 = ${x1} x2 = ${x2}`);
+//   } else if (delta === 0) {
+//     let x1 = -b / (2 * a);
+//     console.log(`PT có nghiệm kép x1 = x2 = ${x1}`);
+//   } else {
+//     console.log("Phương trình vô nghiệm");
+//   }
+// };
+// // gọi hàm
+// ptb2_3(1, 2, -3);
+// ptb2_3(1, 2, 1);
+// ptb2_3(1, 1, 1);
+
+// 26. Phạm vi sử dụng Scope phân biệt Global, function scope và block scope
+// link bài nếu quên
+// https://www.youtube.com/watch?v=uQc13t7mHbk
+
+// 27.1 JS Hoiting ( nâng cao) So sánh var, let và const
+// https://www.youtube.com/watch?v=4FPD4xDKxBI
+// console.log("Giá trị của c = " + c);
+// // Khởi tạo c
+// var c = 9; //undefined
+// let c = 9; //Cannot access 'c' before initialization
+/* Cách JS hiểu
+var c
+console.log("Giá trị của c = " + c);
+// Khởi tạo c
+c = 9;
+*/
+
+// 27.2 Hoiting trong JS  Function
+//https://www.youtube.com/watch?v=YGxNH18D1MU
+
+// 28. Đệ quy với JS
+// https://www.youtube.com/watch?v=cylaAl8P1FA
+// Muốn giải bằng đệ quy cần biết 1 quy luật của bài và điểm dừng lại
+
+// function giaiThua(n) {
+//   if (n === 0 || n === 1) {
+//     return 1;
+//   } else {
+//     return n * giaiThua(n - 1); // cách dùng đệ quy như này
+//   }
+// }
+// //  gọi hàm
+// let ketqua = giaiThua(5);
+// console.log(ketqua);
+
+// // Ví dụ Dãy fibonacci f1=1, f2=1, fn=f(n-1) + f(-2)
+// function f(n) {
+//   if (n <= 2) {
+//     return 1;
+//   } else {
+//     return f(n - 1) + f(n - 2);
+//   }
+// }
+// let kq = f(15); // gọi hàm
+// console.log(kq);
+
+// 29.1 Xử lí chuỗi trong JS
+// https://www.youtube.com/watch?v=2g6qL8kno8U
+// index chuỗi bắt đầu từ 0
+// let ten = "Linh";
+// console.log(ten[0]);
+// //  thuộc tính length chiều dài đếm từ 1 ko đếm từ 0 như index
+// let s3 = "Chưa có bao giờ";
+// // kiểm tra chiều dài của chuỗi s3
+// console.log(s3.length);
+// // Ví dụ vận dụng
+// let mes = prompt("Mời nhập vào chuỗi");
+// if (mes.length <= 140) {
+//   alert(` Bạn đã nhập ${mes.length} kí tự`);
+// } else {
+//   alert(` Bạn đã nhập quá ${mes.length - 140} kí tự`);
+// }
+
+// 29.2 Cắt chuỗi
+//https://www.youtube.com/watch?v=zddc-trDV-w
+// let s4 = "0123456789";
+// // cắt chuỗi dùng silce
+// let s5 = s4.slice(2, 5); // cắt từ vị trí index 2 đến vị trí sát index 5 là 5-1 =4
+// console.log(s5);
+// // ví dụ: Chỉ cho phép tin nhắn dài tối đa 20 kí tự
+// // nếu dài quá thì tự cắt chuỗi sau xử lý
+// let s6 = prompt("Mời nhập vào chuỗi");
+// console.log(`Ban đã nhập ${s6.length} ký tự`);
+// if (s6.length >= 20) {
+//   console.log(`Ban đã nhập quá ${s6.length - 20} kí tự`);
+//   let s7 = s6.slice(0, 20);
+//   // xuất chuỗi sau xử lý
+//   console.log(`Chuỗi sau xử lý là: ${s7}`);
+// }
+// // cách viết 2 1 dòng
+// console.log("Chuỗi sau xử lý:" + prompt("Mời nhập chuỗi 2:").slice(0, 20));
+
+// // cắt chuỗi dùng substring
+// let s8 = "0123456789";
+// // cắt chuỗi dùng silce
+// let s9 = s8.substring(2, 5); // cắt từ vị trí index 2 đến vị trí sát index 5 là 5-1 =4
+// console.log(s9);
+
+// Điểm khác biệt giữa slice và substring
+/*
+Đối số truyền vào :
+substring( start, end): Nhận vào 2 tham số
+ko phân biệt lớn nhỏ nó tự lấy số nhỏ là start còn lớn là end
+ví vụ : (1, 4) or (4, 1) đều được nó sẽ tự đổi lại slice thì ko đổi lại
+slice (start, emd) : bắt buộc phải là số nhỏ là start còn lớn là end
+nếu ko truyền đúng thì ra chuỗi rỗng ví dụ:Đúng(1, 4), Sai(4, 1)
+*/
+// ví dụ
+// let s10 = "0123456789";
+// console.log("Sử dụng substring");
+// console.log(s10.substring(1, 5)); // 12345
+// console.log(s10.substring(5, 1)); // 12345
+// // dùng slice
+// console.log("Sử dụng slice");
+// console.log(s10.slice(1, 5)); // 12345
+// console.log(s10.slice(5, 1)); // chuỗi rỗng
+// // truyền tham số âm
+// // đối với sucstring tham số âm thì chuyển thành 0
+// // ví dụ (-2,-1) nó hiểu là (0, 0) or (-2, 4) --> (0, 4)
+
+// // đối với slice thì lại truyền được tham số âm
+// // ví dụ
+// let s11 = "0123456789";
+// console.log("Sử dụng slice tham số âm");
+// console.log(s11.slice(-3, -1)); // cắt từ -3 đến -2
+// kết quả 78 lấy từ index -3 đến sát index -1 (tức là vị trí -2)
+// truyền tham số âm với slice thì đếm ngược lại
+// như vị dụ trên thì đếm từ 9 là 0, 8 là -1 ..... đến -9 là 0
+
+// 29.3 Tối ưu hóa chuỗi
+//https://www.youtube.com/watch?v=a8KtnjgbwJU
+// xóa khoảng trắng trim, trimEnd, trimStart
+
+// 29.4 JavaScript String Methods concat(), toUpperCase(), toLowerCase(), charAt()
+//https://www.youtube.com/watch?v=Ph82gNolw_Q
+
+// 29.5 JavaScript String Methods replace (oldValue, newValue) repeat (count) in JS
+//https://www.youtube.com/watch?v=5EchW0uNjss
+
+// 29.6 JavaScript String Methods indexOf , lastIndexOf, includes - Xử lý chuỗi trong JavaScript
+//https://www.youtube.com/watch?v=ZlEVZGHPHE4
+
+// 29.7 String Methods JavaScript startsWith() endsWith trong JS, xử lý chuỗi trong JavaScript
+//https://www.youtube.com/watch?v=p9pCq5oXNVM
+
+// 29.8 split() trong JavaScript
+//https://www.youtube.com/watch?v=pz_bB_JnxH8
+// let student = "Hoa,Lan, Huệ,Trung";
+// let arr = student.split(",");
+// console.log(arr);
+// // giới hạn phần tử của mảng
+// let arr1 = student.split(",", 3);
+// console.log(arr1);
+
+// 30.2 Giải bài tập JavaScript 24 _ Đếm ký tự in hoa, in thường, số, space
+// Nhập chuỗi từ bàn phím
+// const inputString = prompt("Nhập vào chuỗi:");
+
+// // khởi tạo biến đếm
+// let lowerCaseCount = 0;
+// let upperCaseCount = 0;
+// let digitCount = 0;
+// let spaceCount = 0;
+
+// // Lặp qua từng kí tự trong chuỗi
+// for (let i = 0; i <= inputString.length; i++) {
+//   console.log(inputString[i]);
+//   let char = inputString[i];
+//   // kiểm tra từng giá trị
+//   if (char >= "a" && char <= "z") {
+//     lowerCaseCount++;
+//   } else if (char >= "A" && char <= "Z") {
+//     upperCaseCount++;
+//   } else if (char >= "0" && char <= "9") {
+//     digitCount++;
+//   } else if (char === " ") {
+//     spaceCount++;
+//   }
+// }
+// // in kết quả
+// console.log("Số kí tự thường: " + lowerCaseCount);
+// console.log("Số kí tự hoa: " + upperCaseCount);
+// console.log("Số kí tự số: " + digitCount);
+// console.log("Số khoảng trắng: " + spaceCount);
+
+// 30.3 Viết trương trình kiểm tra tính hợp lệ
+/*
+a. Viết chương trình kiểm tra tính hợp lệ của mật khẩu: 
+   1.  mật khẩu hợp lệ khi có ít nhất 6 ký tự 
+   2. chứa ít nhất 1 chữ cái viết hoa
+   3. chứa ít nhất 1 chữ cái viết thường
+   4. chứa ít nhất 1 chữ số 
+ b.  Cho người dùng nhập vào mật khẩu để login / so sánh, nếu đúng mở của, sai quá  5 lần khóa đăng nhập, thoát chương trình    
+ */
+// Ví dụ mật khẩu hợp lệ : Abc123
+// Nhập liệu mật khẩu
+// Tạo hàm kiểm tra tính hợp lệ
+// function isPassword(password) {
+//   if (password.length < 6) {
+//     return false;
+//   }
+
+//   let chuThuong = false;
+//   let chuHoa = false;
+//   let chuSo = false;
+
+// for (let i = 0; i < password.length; i++);
+//     let char = password[i];
+//     if (char >= "a" && char <= "z") {
+//       chuThuong = true;
+//     } else if (char >= "A" && char <= "Z") {
+//       chuHoa = true;
+//     } else if (char >= "0" && char <= "9") {
+//       chuSo = true;
+//     }
+//   }
+
+//   return chuThuong && chuHoa && chuSo;
+// }
+
+// // Set mật khẩu
+// function setPassword() {
+//   let password = prompt("Mời nhập mật khẩu:");
+//   if (isPassword(password)) {
+//     alert("Đặt mật khẩu thành công! Mật khẩu là:" + password);
+//     return password;
+//   } else {
+//     alert(`Mật khẩu không hợp lệ
+//       1. Có ít nhất 6 kí tự
+//       2. Có ít nhất 1 kí tự viết hoa
+//       3. Có ít nhất 1 kí tự viết thường
+//       4. có ít nhất 1 kí tự số`);
+//     //  gọi lại hàm set mật khẩu
+//     setPassword();
+//   }
+// }
+
+// // Gọi hàm set pass và gán pass vào biến nếu thành công
+// let passwordOK = setPassword();
+
+// // Viết chương trính đăng nhập
+// let countLogin = 0;
+// while (true) {
+//   let passwordLogin = prompt("Mời nhập mật khẩu đăng nhập:");
+//   if (passwordLogin === passwordOK) {
+//     alert("Đăng nhập thành công");
+//     break;
+//   } else {
+//     countLogin++;
+//     if (countLogin < 5) {
+//       alert("Bạn đã nhập sai pass, số lần thử: " + countLogin + "/5");
+//     } else {
+//       alert("Bạn đã thử 5 lần, t block m rồi");
+//       break;
+//     }
+//   }
+// }
+
+// 30.4 Giải bài tập 26 js
+/*
+ Viết chương trình chuyển tin nhắn sang mật mã theo bảng :  
+ const a="abcdefghijklmnopqrstuvwxyz"   
+ const b="zxcvbnmasdfghjklqwertyuiop" 
+ */
+// https://www.youtube.com/watch?v=4NKxJEnCSnE
+function encryptMessage(message) {
+  const a = "abcdefghijklmnopqrstuvwxyz";
+  const b = "zxcvbnmasdfghjklqwertyuiop";
+  let result = "";
+
+  for (let i = 0; i < message.length; i++) {
+    let char = message[i].toLowerCase(); // chuyển đổi sang chữ thường để phù hợp với bảng mã.
+
+    // kiểm tra ký tự có trong bảng mã không
+    if (a.includes(char)) {
+      // thực hiện chuyển đổi
+      // kiểm tra ví trí index kí tự trong a
+      let index = a.indexOf(char);
+      // lấy giá trị index và dóng sang chuỗi b tương ứng
+      result += b[index];
+    }
+    // nếu ko có trong bảng mã thì dồn vào biến result
+    else {
+      result += char;
+    }
+  }
+  return result;
+}
+//  cho người dùng nhập liệu
+let messageInput = prompt("Nhập tin nhắn:");
+let kq = encryptMessage(messageInput);
+
+alert(`Kết quả là: ${kq}`);
