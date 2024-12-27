@@ -1239,31 +1239,379 @@ a. Viết chương trình kiểm tra tính hợp lệ của mật khẩu:
  const b="zxcvbnmasdfghjklqwertyuiop" 
  */
 // https://www.youtube.com/watch?v=4NKxJEnCSnE
-function encryptMessage(message) {
-  const a = "abcdefghijklmnopqrstuvwxyz";
-  const b = "zxcvbnmasdfghjklqwertyuiop";
-  let result = "";
+// function encryptMessage(message) {
+//   const a = "abcdefghijklmnopqrstuvwxyz";
+//   const b = "zxcvbnmasdfghjklqwertyuiop";
+//   let result = "";
 
-  for (let i = 0; i < message.length; i++) {
-    let char = message[i].toLowerCase(); // chuyển đổi sang chữ thường để phù hợp với bảng mã.
+//   for (let i = 0; i < message.length; i++) {
+//     let char = message[i].toLowerCase(); // chuyển đổi sang chữ thường để phù hợp với bảng mã.
 
-    // kiểm tra ký tự có trong bảng mã không
-    if (a.includes(char)) {
-      // thực hiện chuyển đổi
-      // kiểm tra ví trí index kí tự trong a
-      let index = a.indexOf(char);
-      // lấy giá trị index và dóng sang chuỗi b tương ứng
-      result += b[index];
-    }
-    // nếu ko có trong bảng mã thì dồn vào biến result
-    else {
-      result += char;
-    }
-  }
-  return result;
-}
-//  cho người dùng nhập liệu
-let messageInput = prompt("Nhập tin nhắn:");
-let kq = encryptMessage(messageInput);
+//     // kiểm tra ký tự có trong bảng mã không
+//     if (a.includes(char)) {
+//       // thực hiện chuyển đổi
+//       // kiểm tra ví trí index kí tự trong a
+//       let index = a.indexOf(char);
+//       // lấy giá trị index và dóng sang chuỗi b tương ứng
+//       result += b[index];
+//     }
+//     // nếu ko có trong bảng mã thì dồn vào biến result
+//     else {
+//       result += char;
+//     }
+//   }
+//   return result;
+// }
+// //  cho người dùng nhập liệu
+// let messageInput = prompt("Nhập tin nhắn:");
+// let kq = encryptMessage(messageInput);
 
-alert(`Kết quả là: ${kq}`);
+// alert(`Kết quả là: ${kq}`);
+
+// 30.5 Giải bài tập JavaScript 27 _ Đếm từ tôi trong chuỗi
+// const a = "tôi chăm học tôi chịu khó tôi đẹp zai";
+// Đếm từ tôi trong string a trên ?
+//https://www.youtube.com/watch?v=3VCTflqPqdM
+
+// const a = "tôi chăm học tôi chịu khó tôi đẹp zai";
+// const targetWord = "tôi";
+// let count = 0;
+// for (let i = 0; i < a.length; i++) {
+//   if (a.slice(i, i + targetWord.length) === targetWord) {
+//     count++;
+//   }
+// }
+// alert(`Số lần xuất hiện của từ ${targetWord} là: ${count}`);
+
+//30.6 Giải bài tập JavaScript 28 _ Tách số và chữ từ chuỗi cho trước
+/*
+Viết chương trình tách số và chữ từ chuỗi nhập vào thành 2 chuỗi :  
+ví dụ nhập vào : abc123 sẽ tách và in ra thành 2 chuỗi abc và 123
+*/
+//https://www.youtube.com/watch?v=CxF_g_V3mwE
+
+// function separate(inputString) {
+//   let letters = "";
+//   let numbers = "";
+
+//   for (i = 0; i < inputString.length; i++) {
+//     let char = inputString[i];
+
+//     if (isNaN(char)) {
+//       // nếu kí tự char ko phải là số thêm vào lestters
+//       letters += char;
+//     } else {
+//       // nối kí tự số vào numbers
+//       numbers += char;
+//     }
+//   }
+//   return { letters, numbers };
+// }
+// // nhập liệu chuỗi
+// let inputString = prompt("Mời nhập chuỗi:");
+// let result = separate(inputString);
+
+// alert(`
+// Chuỗi chữ: ${result.letters}
+// Chuỗi số: ${result.numbers}`);
+
+// 31.1 Date and Time trong JavaScript
+//https://www.youtube.com/watch?v=YJkuoPMVYwg
+
+// let currentDate = new Date();
+// console.log(typeof currentDate);
+// console.log(currentDate);
+
+// // Các phương thức lấy thông tin thời gian
+// // lấy năm tháng ngày giwof phút giây
+// let year = currentDate.getFullYear();
+// let month = currentDate.getMonth() + 1;
+// let day = currentDate.getDay();
+// let hours = currentDate.getHours();
+// let minute = currentDate.getMinutes();
+// let second = currentDate.getSeconds();
+
+// console.log("Năm hiện tại: " + year);
+// console.log("Tháng hiện tại: " + month);
+// console.log("Ngày hiện tại: " + day);
+// console.log("Giờ hiện tại: " + hours);
+// console.log("Phút hiện tại: " + minute);
+// console.log("Giây hiện tại: " + second);
+
+// timestamp là gì
+// xuất thời gian tại mốc 0
+// let timestamp1 = new Date(0);
+// console.log(timestamp1);
+
+//31.2 Xử lý ngày tháng trong JavaScript, Date Set Methods , định dạng và hiển thị ngày tháng trong JS
+//https://www.youtube.com/watch?v=SD7hh_G7ERI
+// let myDate1 = new Date(2024, 10, 8);
+// console.log(myDate1);
+// console.log(myDate1.toLocaleDateString());
+
+// // cách 2 dùng datestring (chuỗi ngày tháng)
+// let myDate2 = new Date("2024-02-11T12:35:45");
+// console.log(myDate2);
+// console.log(myDate2.toLocaleDateString()); // xuất định dạng ngày tháng năm
+
+// // Cách 3
+// let myDate3 = new Date();
+// myDate3.setFullYear(2024);
+// myDate3.setMonth(9);
+// myDate3.setDate(8);
+// console.log(myDate3);
+// console.log(myDate3.toLocaleDateString());
+// //  Xuất ngày thoe tự code
+// console.log(`
+// Ngày ${myDate3.getDate()} - Tháng ${
+//   myDate3.getMonth() + 1
+// } - Năm ${myDate3.getFullYear()}
+//   `);
+// // xuất thêm số 0 đằng trước (01 , 02 ..) tháng or ngày sử dụng toán tử 3 ngôi
+// let prefixDate = myDate3.getDate() < 10 ? "0" : "";
+// let prefixMonth = myDate3.getMonth() < 9 ? "0" : "";
+// console.log(`
+// Ngày ${prefixDate}${myDate3.getDate()} - Tháng ${prefixMonth}${
+//   myDate3.getMonth() + 1
+// } - Năm ${myDate3.getFullYear()}
+//     `);
+
+// 31.3 setTimeout trong JavaScript
+// https://www.youtube.com/watch?v=IW3DOeOXPhg
+// 1. Ôn lại 3 cách khai báo hàm
+// a. Với hàm Arrow function
+// let helloArrow = () => {
+//   console.log("Hello");
+// };
+// // helloArrow();
+// setTimeout(helloArrow, 2000); // sau 2s mới hiện thị Hello
+
+// // b. với function declaration
+// function xinChao() {
+//   console.log("Hello xin chào declaration");
+// }
+// // setTimeout(xinChao, 3000);
+
+// // c. với function expresstion
+// let helloExpresstion = function () {
+//   console.log("Hello xin chào function expresstion");
+// };
+// setTimeout(helloExpresstion, 3000);
+
+// 2. truyền trực tiếp function vào trong
+
+// function declaration
+// setTimeout(function xinchao2() {
+//   console.log("Xin chào nha");
+// }, 2000);
+
+// // function arrow
+// setTimeout(() => {
+//   console.log("Hello bạn nha");
+// }, 3000);
+
+// // function expresstion
+// setTimeout(function () {
+//   console.log("Chao xìn bạn");
+// }, 4000);
+
+// trường hợp có tham số truyền vào
+// ví dụ với Arrow function
+// let helloArrow2 = (yourname) => {
+//   console.log("Hello " + yourname);
+// };
+// // setTimeout(helloArrow2, 3000, "Đức Anh");
+
+// // 4. Khi muốn hủy quá trình thực hiện hàm
+// // step 1: Gán settimeout vào 1 biến để lưu giá trị
+// let timeOut = setTimeout(helloArrow2, 3000, "Đức");
+// //  step 2: Hủy lệnh
+// clearTimeout(timeOut);
+
+// 31.4 Javascript setInterval Explained
+// https://www.youtube.com/watch?v=zRP0FXcJfm8
+// lặp đi lặp lại sau 1 khoảng thời gian
+// ví dụ với function declaration
+// function showNoti() {
+//   console.log("bạn có xxxx tin nhắn chưa đọc");
+// }
+// in ra hàm sau 2s (2000ms) hàm lặp lại
+// setInterval(showNoti, 2000);
+// ví dụ 2
+// function updateTime() {
+//   let curentTime = new Date();
+//   console.log(curentTime);
+// }
+// setInterval(updateTime, 2000);
+
+// let counter = 0;
+// 1. Function declaration
+// function count() {
+//   console.log(counter++);
+// }
+
+// 2. function expresstion
+// let count = function () {
+//   console.log(counter++);
+// };
+
+// 3. Function Arrow
+// let count = () => {
+//   console.log(counter++);
+// };
+// setInterval(count, 1000);
+
+// 4.hủy lặp
+// let count = () => {
+//   console.log(counter++);
+//   if (counter === 5) {
+//     // b2 Dừng lặp clearInterval
+//     clearInterval(stopInterval);
+//   }
+// };
+// // b1 Gán biến để nhận giá trị trả về
+// let stopInterval = setInterval(count, 1000);
+
+// Bai
+// let input = Number(prompt("Nhập thời gian làm bài"));
+// alert("Thời gian làm bài của bạn là: " + input + " phút");
+// let setsecond = 60;
+// function show() {
+//   setsecond--;
+//   console.log(input - 1 + ":" + setsecond);
+//   if (setsecond === 0) {
+//     setsecond = 60;
+//     input--;
+//     if (input < 1) {
+//       clearInterval(set);
+//     }
+//   }
+// }
+// let set = setInterval(show, 1000);
+
+// Bài tập 29: Viết chương trình nhập vào năm sinh và in ra số tuổi
+// kiểm tra điều kiện dữ liệu phải là năm sinh và lớn hơn 0
+
+// function calculateAge(inputYear) {
+//   // ép kiểu dữ liệu sang kiểu số
+//   let yearOfBirth = Number(inputYear);
+//   console.log(yearOfBirth);
+//   // kiểm tra  xem năm sinh có là số nguyên và lớn hơn 0
+//   if (!Number.isInteger(yearOfBirth) || yearOfBirth <= 0) {
+//     alert("Năm sinh ko hợp lệ");
+//     return;
+//   }
+//   // lấy năm hiện tại
+//   let currentYear = new Date().getFullYear();
+//   // tính tuổi
+//   let age = currentYear - yearOfBirth;
+//   alert(`Tuổi của bạn là:${age}`);
+// }
+// // Nhập năm sinh từ người dùng
+// let inputYear = prompt("Nhập năm sinh của bạn:");
+// // gọi hàm tính tuổi
+// calculateAge(inputYear);
+
+// c 2 tự làm
+// function demTuoi(nhapNamtuoi) {
+//   let tuoiphuHop = Number(nhapNamtuoi);
+//   // Kiểm tra xem năm sinh có là số nguyên lớn hơn 0
+//   if (Number.isInteger(nhapNamtuoi) || tuoiphuHop >= 0) {
+//     // gọi năm hiện tại
+//     let namHientai = new Date().getFullYear();
+//     let tuoi = namHientai - tuoiphuHop;
+//     alert(`Tuổi của bạn là: ${tuoi}`);
+//     return;
+//   } else {
+//     alert("Năm sinh không hợp lệ");
+//   }
+// }
+// // Nhập năm sinh từ người dùng
+// let nhapNamtuoi = prompt("Nhập năm sinh của bạn:");
+// // gọi hàm tính tuổi
+// demTuoi(nhapNamtuoi);
+
+// c3 của 1 bạn trên mạng
+// let inputYear = prompt("Mời nhập vào năm sinh");
+// if (inputYear <= 0 || isNaN(inputYear)) {
+//   alert("Năm sinh không hợp lệ vui lòng nhập lại năm sinh:");
+//   inputYear = prompt("Mời nhập vào năm sinh");
+// }
+// function outPutOld(namSinh) {
+//   let timeNow = new Date();
+//   let Old = timeNow.getFullYear() - namSinh;
+//   return Old;
+// }
+// let check = outPutOld(inputYear);
+// if (check >= 130) {
+//   alert(
+//     `Tuổi của bạn là: ${check} có vẻ bạn khai báo năm sinh không đúng sự thật khó có ai sống lâu như vậy`
+//   );
+// } else {
+//   alert(`Tuổi của bạn là ${check}`);
+// }
+
+// Bài tập 30: Đếm ngược thời gian
+// https://www.youtube.com/watch?v=XtZMuCAyQto
+// ví dụ thời gian làm bài là 45p chạy về 0 thì báo hết giờ
+
+// let inputTimework = Number(prompt("Mời bạn nhập thời gian:"));
+
+// function demGio(soPhut) {
+//   alert(`Thời gian làm bài của bạn là: ${soPhut} phút`);
+//   let soGiay = soPhut * 60;
+
+//   let demGioInterval = setInterval(function () {
+//     // thân hàm
+//     let soPhutLeft = Math.floor(soGiay / 60); //làm tròn lên phút
+//     let soGiayLeft = soGiay % 60; //chia lấy phần dư 65%60=5
+//     // định dạng lại khi số giây nhỏ hơn 10 dùng toán tử 3 ngôi
+//     let dinhDanggiay = soGiayLeft < 10 ? "0" : "";
+//     console.log(
+//       `Thời gian còn lại: ${soPhutLeft}:${dinhDanggiay}${soGiayLeft}`
+//     );
+
+//     if (soGiay <= 0) {
+//       clearInterval(demGioInterval); //dừng đếm
+//       alert("HẾT GIỜ RỒI CON GIỜI");
+//     } else {
+//       soGiay--;
+//     }
+//   }, 1000);
+// }
+// // gọi hàm
+// demGio(inputTimework);
+
+// Bài tập 31:Xây dựng chức năng hiển thị thời gian offline
+// https://www.youtube.com/watch?v=M0uj-m8ntvE
+
+// function timeSince(timestamp) {
+//   let now = new Date();
+//   console.log(`timestamp là: ${now.getTime()}`);
+//   // khai báo
+//   let timeDifferrence = now - timestamp;
+//   // quy đổi sang ms vì timestamp tính bằng ms
+//   let seconds = Math.floor(timeDifferrence / 1000);
+//   let minutes = Math.floor(seconds / 60);
+//   let hours = Math.floor(minutes / 60);
+//   let days = Math.floor(hours / 24);
+//   let months = Math.floor(days / 30);
+//   let years = Math.floor(months / 12); //làm tròn xuống số nguyên
+
+//   if (years > 0) {
+//     return `Online ${years} năm trước`;
+//   } else if (months > 0) {
+//     return `Online ${months} tháng trước`;
+//   } else if (days > 0) {
+//     return `Online ${days} ngày trước`;
+//   } else if (hours > 0) {
+//     return `Online ${hours} giờ trước`;
+//   } else if (minutes > 0) {
+//     return `Online ${minutes} phút trước`;
+//   } else {
+//     return `Online ${seconds} giây trước`;
+//   }
+// }
+// // ví dụ sử dụng
+// let timeOffline = 1635272386209; // thời gian offline
+// console.log(timeSince(timeOffline));
